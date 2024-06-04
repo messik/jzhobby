@@ -1,0 +1,55 @@
+
+    .obraz {
+           width: 360px;
+           cursor: pointer;
+           margin: 10px;
+           height: 250px;
+       }
+   
+       .powiekszenie-container {
+           display: none;
+           position: fixed;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background-color: rgba(0, 0, 0, 0.7);
+           justify-content: center;
+           align-items: center;
+       }
+   
+       .powiekszony-obraz {
+           max-width: 80%;
+           max-height: 80%;
+       }
+   
+       .przewinanie-button {
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+           background-color: rgba(255, 255, 255, 0.7);
+           padding: 10px;
+           border: none;
+           cursor: pointer;
+       }
+   
+       .zamknij {
+           position: absolute;
+           top: 10px;
+           right: 10px;
+           color: white;
+           font-size: 24px;
+           cursor: pointer;
+       }
+   
+       #przewin-lewo {
+           left: 10px;
+       }
+   
+       #przewin-prawo {
+           right: 10px;
+       }
+   
+       .przesuwanie-obrazu {
+           position: absolute;
+       }

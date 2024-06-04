@@ -1,0 +1,104 @@
+<head>
+    <link rel="stylesheet" href="../../css/główna.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../java/state.js" defer></script>
+    
+    <script>document.addEventListener('DOMContentLoaded', function () {
+        var showInfoButton = document.getElementById('showInfoButton');
+        var infoContainer = document.getElementById('infoContainer');
+    
+        showInfoButton.addEventListener('click', function () {
+            infoContainer.classList.toggle('hidden');
+        });
+    });
+    </script>
+    
+</head>
+
+<body onload="zegarek()">
+    <div class="return"><a href="../motocykle.html"><img src="../../img/back.png" alt="Powrót"></a></div>
+    <div class="galeria-container">
+        <hr>
+        <button id="showInfoButton">BMW S 1000 XR</button>
+        <div id="infoContainer" class="hidden">
+            
+        
+            <p>  
+                BMW S1000XR to wszechstronny motocykl z segmentu adventure sport, łączący cechy sportowych maszyn z wygodą i funkcjonalnością motocykli turystycznych. Poniżej znajduje się krótki opis tego modelu:
+            <ul>
+                <li>
+                    1. Silnik
+                    Czterocylindrowy, rzędowy silnik o pojemności 999 cm³, który bazuje na jednostce napędowej z modelu S1000RR. Zapewnia wysoki poziom osiągów i dynamiczne przyspieszenie.
+                <li>
+                    2. Moc i moment obrotowy
+                    Generuje około 165 KM mocy i 114 Nm momentu obrotowego, co pozwala na bardzo szybkie przyspieszenie i wysokie prędkości maksymalne.
+                </li>
+                <li>
+                    3. Rama i zawieszenie
+                    Aluminiowa rama o sportowym charakterze, połączona z wysokiej klasy zawieszeniem, które może być regulowane elektronicznie (Dynamic ESA). Zapewnia to doskonałą stabilność i komfort jazdy zarówno na asfaltowych drogach, jak i w lekkim terenie.
+                </li>
+                <li>
+                    4. Design
+                    Agresywny i nowoczesny wygląd z aerodynamicznymi kształtami. Wyposażony w LED-owe reflektory i nowoczesny zestaw wskaźników, często z dużym kolorowym wyświetlaczem TFT.
+                <li>
+                    5. Ergonomia
+                    Wysoka pozycja siedzenia i ergonomicznie zaprojektowane elementy sterujące zapewniają wygodę podczas długich podróży. Dodatkowo, regulowana szyba i opcjonalne kufry boczne zwiększają funkcjonalność.
+                </li>
+                <li>
+                    6. Hamowanie
+                    Wysokiej klasy układ hamulcowy z dwoma dużymi tarczami z przodu i jedną tarczą z tyłu, wspierany przez systemy ABS i DBC (Dynamic Brake Control).
+                
+            </ul>
+            <p>BMW S1000XR to motocykl, który doskonale łączy osiągi sportowego superbike'a z komfortem i funkcjonalnością motocykla turystycznego. Idealny dla osób poszukujących maszyny zdolnej do szybkiej jazdy po krętych drogach oraz długich podróży z dużą dawką komfortu i bezpieczeństwa.</p>
+        </div>
+        <hr>
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/bx5/b1.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/bx5/b1.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/bx5/b2.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/bx5/b2.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/bx5/b3.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/bx5/b3.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/bx5/b4.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/bx5/b4.jpg')">
+    <hr>
+    </div>
+
+    <div class="powiekszenie-container" id="powiekszenie-container">
+        <img class="powiekszony-obraz" id="powiekszony-obraz" src="" alt="Powiększony Obraz">
+        <span class="zamknij" onclick="zamknijPowiekszenie()">&times;</span>
+        <button class="przewinanie-button" id="przewin-lewo" onclick="przewinLewo()">&#10094;</button>
+        <button class="przewinanie-button" id="przewin-prawo" onclick="przewinPrawo()">&#10095;</button>
+        <script src="../../java/galeria.js"></script>
+    </div>
+
+    <div class="czas">
+        <script>
+            function zegarek() {
+                var data = new Date();
+                var godzina = data.getHours();
+                var minuta = data.getMinutes();
+                var sekunda = data.getSeconds();
+                var dzien = data.getDate();
+                var dzienN = data.getDay();
+                var miesiac = data.getMonth();
+                var rok = data.getFullYear();
+
+                if (minuta < 10) minuta = "0" + minuta;
+                if (sekunda < 10) sekunda = "0" + sekunda;
+
+                var dni = new Array("niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota");
+                var miesiace = new Array("stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia");
+
+                var pokazDate = "Dzisiaj jest " + dni[dzienN] + ', ' + dzien + ' ' + miesiace[miesiac] + ' ' + rok + " roku.<br />Godzina " + godzina + ':' + minuta + ':' + sekunda;
+                document.getElementById("zegar").innerHTML = pokazDate;
+
+                setTimeout(zegarek, 1000);
+            }        
+        </script>
+    </div>
+    </head>
+
+    </head>
+    <div id="zegar"></div>
+
+</body>

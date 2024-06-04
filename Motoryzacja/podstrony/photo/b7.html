@@ -1,0 +1,105 @@
+<head>
+    <link rel="stylesheet" href="../../css/główna.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../java/state.js" defer></script>
+    
+    <script>document.addEventListener('DOMContentLoaded', function () {
+        var showInfoButton = document.getElementById('showInfoButton');
+        var infoContainer = document.getElementById('infoContainer');
+    
+        showInfoButton.addEventListener('click', function () {
+            infoContainer.classList.toggle('hidden');
+        });
+    });
+    </script>
+    
+</head>
+
+<body onload="zegarek()">
+    <div class="return"><a href="../motocykle.html"><img src="../../img/back.png" alt="Powrót"></a></div>
+    <div class="galeria-container">
+        <hr>
+        <button id="showInfoButton">Yamaha MT-07</button>
+        <div id="infoContainer" class="hidden">
+            
+        
+            <p>  
+                Yamaha MT-07 to popularny motocykl produkowany przez japońską firmę Yamaha, należący do segmentu naked bike. Poniżej znajduje się krótki opis tego modelu:
+            <ul>
+                <li>
+                    1. Silnik
+                    Dwucylindrowy, rzędowy silnik o pojemności 689 cm³, wyposażony w technologię crossplane, która zapewnia płynne dostarczanie mocy i dynamiczną jazdę.
+                <li>
+                    2. Moc i moment obrotowy
+                    Generuje około 74 KM mocy i 68 Nm momentu obrotowego, co daje świetne przyspieszenie i elastyczność w różnych warunkach jazdy.
+                </li>
+                <li>
+                    3. Rama i zawieszenie
+                    Lekka, kompaktowa rama, która w połączeniu z teleskopowym przednim zawieszeniem i tylnym zawieszeniem typu Monocross zapewnia dobrą stabilność i komfort jazdy.
+                </li>
+                <li>
+                    4. Design
+                    Nowoczesny, agresywny wygląd z charakterystycznymi, ostro zarysowanymi liniami i minimalistycznym nadwoziem. Wyposażony w LED-owe światła, które dodają nowoczesnego wyglądu i poprawiają widoczność.
+                <li>
+                    5. Ergonomia
+                    Wygodna pozycja jazdy dzięki dobrze wyprofilowanemu siedzeniu i ergonomicznie rozmieszczonym elementom sterującym. Motocykl jest odpowiedni zarówno do miejskiej jazdy, jak i dłuższych tras.
+                </li>
+                <li>
+                    6. Hamowanie
+                    Wyposażony w efektywny układ hamulcowy z dwoma tarczami z przodu i jedną tarczą z tyłu, często również z systemem ABS dla zwiększenia bezpieczeństwa.
+                </li>
+                
+            </ul>
+            <p>Yamaha MT-07 jest ceniona za świetny stosunek jakości do ceny, niezawodność i wszechstronność, co czyni ją popularnym wyborem zarówno dla początkujących, jak i bardziej doświadczonych motocyklistów.</p>
+        </div>
+        <hr>
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b7/b1.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b7/b1.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b7/b2.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b7/b2.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b7/b3.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b7/b3.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b7/b4.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b7/b4.jpg')">
+    <hr>
+    </div>
+
+    <div class="powiekszenie-container" id="powiekszenie-container">
+        <img class="powiekszony-obraz" id="powiekszony-obraz" src="" alt="Powiększony Obraz">
+        <span class="zamknij" onclick="zamknijPowiekszenie()">&times;</span>
+        <button class="przewinanie-button" id="przewin-lewo" onclick="przewinLewo()">&#10094;</button>
+        <button class="przewinanie-button" id="przewin-prawo" onclick="przewinPrawo()">&#10095;</button>
+        <script src="../../java/galeria.js"></script>
+    </div>
+
+    <div class="czas">
+        <script>
+            function zegarek() {
+                var data = new Date();
+                var godzina = data.getHours();
+                var minuta = data.getMinutes();
+                var sekunda = data.getSeconds();
+                var dzien = data.getDate();
+                var dzienN = data.getDay();
+                var miesiac = data.getMonth();
+                var rok = data.getFullYear();
+
+                if (minuta < 10) minuta = "0" + minuta;
+                if (sekunda < 10) sekunda = "0" + sekunda;
+
+                var dni = new Array("niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota");
+                var miesiace = new Array("stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia");
+
+                var pokazDate = "Dzisiaj jest " + dni[dzienN] + ', ' + dzien + ' ' + miesiace[miesiac] + ' ' + rok + " roku.<br />Godzina " + godzina + ':' + minuta + ':' + sekunda;
+                document.getElementById("zegar").innerHTML = pokazDate;
+
+                setTimeout(zegarek, 1000);
+            }        
+        </script>
+    </div>
+    </head>
+
+    </head>
+    <div id="zegar"></div>
+
+</body>

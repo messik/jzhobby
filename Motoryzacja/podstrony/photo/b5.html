@@ -1,0 +1,114 @@
+<head>
+    <link rel="stylesheet" href="../../css/główna.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    
+    <script>document.addEventListener('DOMContentLoaded', function () {
+        var showInfoButton = document.getElementById('showInfoButton');
+        var infoContainer = document.getElementById('infoContainer');
+    
+        showInfoButton.addEventListener('click', function () {
+            infoContainer.classList.toggle('hidden');
+        });
+    });
+    </script>
+    
+</head>
+
+<body onload="zegarek()">
+    <div class="return"><a href="../samochody.html"><img src="../../img/back.png" alt="Powrót"></a></div>
+    <div class="galeria-container">
+        <hr>
+        <button id="showInfoButton">Nissan GT-R</button>
+        <div id="infoContainer" class="hidden">
+            
+        
+            <p>  Nissan GT-R to wysokowydajny, sportowy samochód produkowany przez japońską markę Nissan. Jest znany ze swojej imponującej wydajności, zaawansowanej technologii i charakterystycznego designu. Oto kilka kluczowych cech tego modelu:
+            <ul>
+                <li>
+                    1. Silnik
+                    GT-R jest napędzany przez ręcznie składany silnik V6 twin-turbo o pojemności 3.8 litra. Generuje on dużą moc, zazwyczaj przekraczającą 570 koni mechanicznych, co zapewnia znakomite osiągi i przyspieszenie.
+                <li>
+                    2. Osiągi
+                    Nissan GT-R jest znany z wyjątkowego przyspieszenia i prędkości maksymalnej. Jego napęd na wszystkie koła (AWD) zapewnia doskonałą trakcję i stabilność, co czyni go jednym z najlepszych samochodów w swojej klasie pod względem prowadzenia.
+                </li>
+                <li>
+                    3. Technologia
+                    Wyposażony jest w zaawansowane technologie, w tym zaawansowany system kontroli trakcji, dynamiczne zawieszenie i zaawansowany system telemetryczny, który dostarcza kierowcy szczegółowych informacji o wydajności pojazdu.
+                </li>
+                <li>
+                    4. Design
+                    GT-R ma charakterystyczny i agresywny wygląd, który podkreśla jego sportowy charakter. Aerodynamiczna sylwetka, szeroki rozstaw osi i nisko osadzone nadwozie nadają mu wyjątkowy wygląd.
+                <li>
+                    5. Wnętrze
+                    Wnętrze GT-R łączy luksus z funkcjonalnością. Jest przestronne i komfortowe, z wysokiej jakości materiałami i nowoczesnymi technologiami, które zapewniają kierowcy i pasażerom doskonałe wrażenia z jazdy.
+                </li>
+                <li>
+                    6. Dziedzictwo
+                    Nissan GT-R, znany również jako "Godzilla", ma bogatą historię i dziedzictwo w świecie motoryzacji. Jest to samochód kultowy, uwielbiany przez entuzjastów wyścigów i motoryzacji na całym świecie.
+                </li>
+                
+            </ul>
+            Podsumowując, Nissan GT-R to niezwykle wydajny i zaawansowany technologicznie samochód sportowy, który oferuje wyjątkowe osiągi, nowoczesne technologie i charakterystyczny design. Jest symbolem mocy i precyzji w świecie motoryzacji.</p>
+        </div>
+        <hr>
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b5/b1.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b5/b1.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b5/b2.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b5/b2.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b5/b3.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b5/b3.jpg')">
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b5/b4.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b5/b4.jpg')">
+    <hr>
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b5/b5.jpg" alt=" alt"
+    onclick="pokazPowiekszenie('../../img/b5/b5.jpg')">
+
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b5/b6.jpg" alt=" alt"
+    onclick="pokazPowiekszenie('../../img/b5/b6.jpg')">
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b5/b7.jpg" alt=" alt"
+    onclick="pokazPowiekszenie('../../img/b5/b7.jpg')">
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b5/b8.jpg" alt=" alt"
+    onclick="pokazPowiekszenie('../../img/b5/b8.jpg')">
+        <hr>
+    </div>
+
+    <div class="powiekszenie-container" id="powiekszenie-container">
+        <img class="powiekszony-obraz" id="powiekszony-obraz" src="" alt="Powiększony Obraz">
+        <span class="zamknij" onclick="zamknijPowiekszenie()">&times;</span>
+        <button class="przewinanie-button" id="przewin-lewo" onclick="przewinLewo()">&#10094;</button>
+        <button class="przewinanie-button" id="przewin-prawo" onclick="przewinPrawo()">&#10095;</button>
+        <script src="../../java/galeria.js"></script>
+    </div>
+
+    <div class="czas">
+        <script>
+            function zegarek() {
+                var data = new Date();
+                var godzina = data.getHours();
+                var minuta = data.getMinutes();
+                var sekunda = data.getSeconds();
+                var dzien = data.getDate();
+                var dzienN = data.getDay();
+                var miesiac = data.getMonth();
+                var rok = data.getFullYear();
+
+                if (minuta < 10) minuta = "0" + minuta;
+                if (sekunda < 10) sekunda = "0" + sekunda;
+
+                var dni = new Array("niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota");
+                var miesiace = new Array("stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia");
+
+                var pokazDate = "Dzisiaj jest " + dni[dzienN] + ', ' + dzien + ' ' + miesiace[miesiac] + ' ' + rok + " roku.<br />Godzina " + godzina + ':' + minuta + ':' + sekunda;
+                document.getElementById("zegar").innerHTML = pokazDate;
+
+                setTimeout(zegarek, 1000);
+            }        
+        </script>
+    </div>
+    </head>
+
+    </head>
+    <div id="zegar"></div>
+
+</body>

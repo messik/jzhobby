@@ -1,0 +1,114 @@
+<head>
+    <link rel="stylesheet" href="../../css/główna.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+            var showInfoButton = document.getElementById('showInfoButton');
+            var infoContainer = document.getElementById('infoContainer');
+
+            showInfoButton.addEventListener('click', function () {
+                infoContainer.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+</head>
+
+<body onload="zegarek()">
+    <div class="return"><a href="../samochody.html"><img src="../../img/back.png" alt="Powrót"></a></div>
+    <div class="galeria-container">
+        <hr>
+        <button id="showInfoButton">Mercedes CLS</button>
+        <div id="infoContainer" class="hidden">
+        
+            <p>  Mercedes-Benz CLS 63 AMG to wysokowydajna wersja sportowa eleganckiego i luksusowego sedanu klasy wyższej CLS. Oto kilka kluczowych cech tego samochodu:
+
+
+            <ul>
+                <li>  
+                    1. Silnik 
+                    Jest napędzany przez potężny silnik benzynowy o wysokiej wydajności, który zapewnia imponujące osiągi. Typowo wyposażony jest w silnik V8 biturbo, który generuje dużą moc i moment obrotowy.
+                </li>
+                <li>
+                    2. Design
+                    CLS 63 AMG charakteryzuje się dynamicznym i eleganckim designem, który wyróżnia go spośród innych sedanów. Posiada charakterystyczną sylwetkę fastbacka, co nadaje mu sportowy wygląd.
+                </li>
+                <li>
+                    3. Wyposażenie
+                    Jest bogato wyposażony w najnowsze technologie i luksusowe materiały. Wnętrze jest komfortowe, przestronne i oferuje wiele opcji personalizacji. Dodatkowo, CLS 63 AMG może być wyposażony w zaawansowane systemy bezpieczeństwa i asysty kierowcy.
+                </li>
+                <li>
+                    4. Prestiż
+                    Jest to samochód dla tych, którzy cenią sobie luksus, wyrafinowanie i wyjątkowe osiągi. CLS 63 AMG reprezentuje prestiż marki Mercedes-Benz oraz dziedzictwo sportowych modeli AMG.
+                </li>
+                <li>
+                    5. Osłona techniczna
+                    Posiada zaawansowane systemy kontroli trakcji, zawieszenia i stabilności, które zapewniają doskonałe prowadzenie i dynamikę jazdy. Dodatkowo, może być wyposażony w systemy wydajnego hamowania oraz układy kierowania.
+                </li>
+               
+            </ul>
+            Podsumowując, Mercedes-Benz CLS 63 AMG to sportowy i luksusowy sedan, który oferuje doskonałe połączenie wydajności, komfortu i stylu. Dla wielu entuzjastów motoryzacji jest to marzenie o szybkim, potężnym i prestiżowym samochodzie.
+            </p>
+        </div>
+        <hr>
+        <img class="obraz" class="przesuwanie-obrazu" src="../../img/b3/b1.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b3/b1.jpg')">
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b3/b2.jpg" alt="alt"
+        onclick="pokazPowiekszenie('../../img/b3/b2.jpg')">
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b3/b3.jpg" alt="alt"
+        onclick="pokazPowiekszenie('../../img/b3/b3.jpg')">
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b3/b4.jpg" alt="alt"
+        onclick="pokazPowiekszenie('../../img/b3/b4.jpg')">
+    <hr>
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b3/b5.jpg" alt="alt"
+        onclick="pokazPowiekszenie('../../img/b3/b5.jpg')">
+
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b3/b6.jpg" alt=" alt"
+        onclick="pokazPowiekszenie('../../img/b3/b6.jpg')">
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b3/b7.jpg" alt="alt"
+        onclick="pokazPowiekszenie('../../img/b3/b7.jpg')">
+    <img class="obraz" class="przesuwanie-obrazu" src="../../img/b3/b8.jpg" alt="alt"
+        onclick="pokazPowiekszenie('../../img/b3/b8.jpg')">
+        <hr>
+    </div>
+
+    <div class="powiekszenie-container" id="powiekszenie-container">
+        <img class="powiekszony-obraz" id="powiekszony-obraz" src="" alt="Powiększony Obraz">
+        <span class="zamknij" onclick="zamknijPowiekszenie()">&times;</span>
+        <button class="przewinanie-button" id="przewin-lewo" onclick="przewinLewo()">&#10094;</button>
+        <button class="przewinanie-button" id="przewin-prawo" onclick="przewinPrawo()">&#10095;</button>
+        <script src="../../java/galeria.js"></script>
+    </div>
+
+    <div class="czas">
+        <script>
+            function zegarek() {
+                var data = new Date();
+                var godzina = data.getHours();
+                var minuta = data.getMinutes();
+                var sekunda = data.getSeconds();
+                var dzien = data.getDate();
+                var dzienN = data.getDay();
+                var miesiac = data.getMonth();
+                var rok = data.getFullYear();
+
+                if (minuta < 10) minuta = "0" + minuta;
+                if (sekunda < 10) sekunda = "0" + sekunda;
+
+                var dni = new Array("niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota");
+                var miesiace = new Array("stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia");
+
+                var pokazDate = "Dzisiaj jest " + dni[dzienN] + ', ' + dzien + ' ' + miesiace[miesiac] + ' ' + rok + " roku.<br />Godzina " + godzina + ':' + minuta + ':' + sekunda;
+                document.getElementById("zegar").innerHTML = pokazDate;
+
+                setTimeout(zegarek, 1000);
+            }        
+        </script>
+    </div>
+    </head>
+
+    </head>
+    <div id="zegar"></div>
+
+</body>
